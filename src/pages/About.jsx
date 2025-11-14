@@ -4,7 +4,7 @@ import TrueFocus from '../components/truefocus/Truefocus.jsx';
 import './About.css'
 import profile from './../assets/profile20.jpg'
 import TiltedCard from '../components/tiltedcard/Tiltedcard.jsx';
-import TechCertShowcase from '../components/Profileshow/Profileshow.jsx';
+import TechCertShowcase from '../components/profileshow/Profileshow.jsx';
 import EducationTimeline from '../components/study/EducationTimeline.jsx';
 
 
