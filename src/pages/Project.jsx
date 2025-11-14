@@ -5,7 +5,7 @@ import React from 'react'
 import TrueFocus from './../components/truefocus/Truefocus.jsx';
 import page from '../assets/STACKPAGE.png';
 import weather from './../assets/WEATHER.png';
-import food from './../assets/food.png';
+import food from './../assets/FOOD.png';
 import quiz from './../assets/QUIZ.png';
 
 
