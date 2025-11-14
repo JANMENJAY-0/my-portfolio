@@ -1,0 +1,354 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  min-height: 100vh;
+  background-color: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding: 1rem;
+}
+
+
+@media (min-width: 768px) {
+  .app-container { padding: 3rem; }
+}
+
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+}
+.header-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.025em;
+}
+.header-subtitle {
+  font-size: 1.25rem;
+  color: #93C5FD;
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .header-title { font-size: 3.75rem; }
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  overflow: visible;
+  padding: 0.25rem;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .timeline-container { padding: 2.5rem; }
+}
+
+
+.timeline-line {
+  display: none;
+  position: absolute;
+  border-left: 2px solid #374151;
+  height: 100%;
+  left: 50%;
+}
+@media (min-width: 768px) { .timeline-line { display: block; } }
+
+.timeline-item {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  min-height: 180px;
+
+  overflow: visible;
+}
+@media (min-width: 768px) { .timeline-item { min-height: 150px; } }
+
+
+.card-outer {
+  position: absolute;
+  width: 100%;
+  padding: 4px; 
+  border-radius: 1rem;
+  transition: all 500ms ease-in-out;
+  opacity: 0;
+  transform: translateX(-100%);
+  z-index: 10;
+  
+  overflow: visible; 
+}
+
+
+.card-outer.card-expanded {
+  padding: 12px; 
+}
+
+
+.timeline-item:hover .card-outer { transform: scale(1.01); }
+
+.card-outer.visible { opacity: 1; transform: translateX(0); }
+
+.timeline-item.is-left .card-outer { left: 0; }
+.timeline-item.is-right .card-outer { right: 0; transform: translateX(100%); }
+.timeline-item.is-right .card-outer.visible { transform: translateX(0); }
+
+
+.electric-border-root {
+  position: relative;
+  overflow: visible;   
+  border-radius: 1rem;
+}
+
+
+.eb-layers {
+  position: absolute;
+  
+  top: -14px; left: -14px; right: -14px; bottom: -14px;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  box-sizing: content-box;
+}
+
+
+.eb-layers > div {
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+
+.card-inner {
+ 
+  background-color: transparent !important;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  height: 100%;
+  position: relative;
+  z-index: 3; 
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6); 
+}
+.card-institution {
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #93C5FD;
+  margin-bottom: 0.75rem;
+}
+.card-description-list {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  color: #f3f4f6;
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.6;
+}
+.card-description-list li { margin-bottom: 0.5rem; }
+
+@media (min-width: 768px) { .card-outer { width: 41.666667%; } }
+
+
+.timeline-marker {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0.5);
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(17,24,39,0.7);
+  border: 1px solid #374151;
+  transition: all 1000ms ease-out;
+  opacity: 0;
+}
+.timeline-marker.visible { opacity: 1; transform: translateY(-50%) scale(1); }
+@media (min-width: 768px) { .timeline-marker { display: flex; } }
+
+
+.date-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+
+.date-label {
+  display: none;
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
+  color: white;
+}
+.date-left { right: 50%; margin-right: 3rem; text-align: right; }
+.date-right { left: 50%; margin-left: 3rem; text-align: left; }
+@media (min-width: 768px) { .date-label { display: block; } }
+
+
+.date-mobile {
+  position: absolute;
+  top: -40px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-weight: 700;
+}
+@media (min-width: 768px) { .date-mobile { display: none; } }
+
+
+.closing-marker {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.closing-marker-inner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #111827;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #374151;
+}
+.closing-marker-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: #3B82F6;
+}
+@media (min-width: 768px) { .closing-marker { display: flex; } } 
+
+/* added */
+
+
+/* Mobile-only tweaks for EducationTimeline (max-width: 767px) */
+@media (max-width: 767px) {
+  .timeline-container {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  /* Stack items vertically and make sure they take full width */
+  .timeline-item {
+    display: block;
+    padding: 0.5rem 0;
+    margin-bottom: 1.5rem;
+    min-height: auto;
+  }
+
+  /* Card becomes flow content (no absolute) */
+  .card-outer {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    padding: 6px;
+    border-radius: 1rem;
+    transform: translateY(8px) scale(0.995);
+    opacity: 0;
+    transition: transform 320ms ease, opacity 260ms ease, padding 220ms ease;
+  }
+  .card-outer.visible {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  /* Reduce electric border offsets for containment */
+  .eb-layers {
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+  }
+  .eb-layers > div { box-sizing: border-box; }
+
+  /* Marker: inline with item, smaller */
+  .timeline-marker {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translateY(0) scale(0.85);
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+    border-width: 1px;
+    align-items: center;
+    justify-content: center;
+  }
+  .timeline-marker.visible { transform: translateY(0) scale(1); opacity: 1; }
+  .timeline-marker i { font-size: 1rem !important; }
+
+  /* Date: show above each card, hide desktop date-label */
+  .date-wrapper {
+    position: relative;
+    top: 0;
+    transform: none;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .date-mobile {
+    display: block;
+    top: -8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: white;
+    margin-left: 0.25rem;
+  }
+  .date-label { display: none !important; }
+
+  /* Ensure card content is comfortable on small screens */
+  .card-inner { padding: 1rem; }
+  .card-title { font-size: 1.05rem; line-height: 1.15; }
+  .card-institution { font-size: 0.86rem; margin-bottom: 0.5rem; }
+  .card-description-list { font-size: 0.93rem; padding-left: 1rem; }
+
+  /* Closing marker adapt */
+  .closing-marker { display: none; }
+
+  /* Tiny phones adjustments (<360px) */
+  @media (max-width: 359px) {
+    .card-inner { padding: 0.9rem; }
+    .card-title { font-size: 1rem; }
+    .card-description-list { font-size: 0.88rem; padding-left: 0.9rem; }
+    .date-mobile { font-size: 0.9rem; }
+  }
+}

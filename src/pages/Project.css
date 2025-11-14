@@ -1,0 +1,61 @@
+.project{
+  margin-top: 100px;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #4e5369;
+  text-align: justify;
+  border-radius: 16px;
+  max-width: 1300px;
+
+}
+
+.start-p {
+  margin-top: 2rem;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #7c6fc7;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+
+/* ---------- SMALLER DEVICES ---------- */
+@media (max-width: 900px) {
+  .project {  margin-top: 60px; }
+  .parag { padding-bottom: 36px; }
+
+  .parag p {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    max-width: 720px;
+  }
+
+  .start-p { font-size: 1.04rem; }
+}
+
+@media (max-width: 600px) {
+  .project {  margin-top: 70px; 
+    margin-bottom: 50px;
+    margin-right: 56rem;
+  
+  }
+  .parag { padding-bottom: 32px; }
+
+  .parag p {
+    text-align: left;        
+    font-size: 0.85rem;
+    padding: 0 6px;
+    max-width: 520px;
+  }
+
+  .start-p {
+    font-size: 1rem;
+    display: block;
+  }
+}

@@ -1,0 +1,31 @@
+#root {
+  height: auto;
+  max-width: auto;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;         
+  z-index: -1;        
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cursor-target{
+  background-color: rgb(12, 12, 75);
+}
+
+.nav{
+  position: fixed;
+  width: 100%;
+  height: auto;
+}
+
+
