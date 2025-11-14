@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
-import './TrueFocus.css';
+import './Truefocus.css';
 
 const TrueFocus = ({
   sentence = 'True Focus',
