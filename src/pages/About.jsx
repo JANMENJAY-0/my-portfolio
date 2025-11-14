@@ -1,7 +1,7 @@
 
 import React from 'react'
 import TrueFocus from '../components/truefocus/Truefocus.jsx';
-import './about.css'
+import './About.css'
 import profile from './../assets/profile20.jpg'
 import TiltedCard from '../components/tiltedcard/Tiltedcard.jsx';
 import TechCertShowcase from '../components/Profileshow/Profileshow.jsx';
