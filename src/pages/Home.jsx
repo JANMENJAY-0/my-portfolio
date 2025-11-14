@@ -2,7 +2,7 @@
 
 import React from "react";
 import TargetCursor from "../components/cursor/Cursor.jsx";
-import "./home.css";
+import "./Home.css";
 import myResume from "../assets/Janmenjay_sde_recent.pdf";
 import TextType from "../components/texttype/Texttype.jsx";
 import EarthCanvas from "../components/earth/Earth.jsx";
